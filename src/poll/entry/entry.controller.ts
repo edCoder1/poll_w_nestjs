@@ -21,4 +21,7 @@ export class EntryController {
       message: `All Correct: ${id}`,
     };
   }
+
+  @Get('test')
+  public testRedis() {}
 }
