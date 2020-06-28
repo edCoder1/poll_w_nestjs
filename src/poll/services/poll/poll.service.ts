@@ -5,7 +5,10 @@ import { Md5 } from 'ts-md5/dist/md5';
 export class PollService {
   constructor() {}
 
-  private timeoutPromise(timeout: number, value: string): Promise<string> {
+  private timeoutPromise(
+    timeout: number,
+    value: string | Int32Array,
+  ): Promise<string | Int32Array> {
     return new Promise((resolve, reject) =>
       setTimeout(() => {
         resolve(value);
@@ -13,7 +16,10 @@ export class PollService {
     );
   }
 
-  public returnPromise(millis: number, value: string): Promise<string> {
+  public returnPromise(
+    millis: number,
+    value: string | Int32Array,
+  ): Promise<string | Int32Array> {
     return new Promise((resolve, reject) => {
       resolve(this.timeoutPromise(millis, value));
     });

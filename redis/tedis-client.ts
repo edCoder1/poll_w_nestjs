@@ -3,7 +3,7 @@ import { Tedis } from 'redis-typescript';
 
 @Injectable()
 export class RedisAsyncClient {
-  async getRedisAsyncClient(): Promise<any> {
+  async getRedisAsyncClient(): Promise<Tedis> {
     // auth
     const tedis = new Tedis({
       port: 6379,
